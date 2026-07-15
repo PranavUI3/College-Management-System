@@ -1,0 +1,454 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(
+    160deg,
+    #fdfbf7 0%,
+    #f3ede2 50%,
+    #eef6f4 100%
+  );
+  min-height: 100vh;
+}
+
+/* ============== Header ============== */
+
+header {
+  min-height: 10vh;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+    120deg,
+    #1d3557 0%,
+    #2a4a73 55%,
+    #2a9d8f 100%
+  );
+  box-shadow: 0 4px 14px rgba(29, 53, 87, 0.18);
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo h2 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.title h1 {
+  color: #f0f4f8;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.logout button {
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    border-color 0.3s ease;
+}
+
+.logout button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.logout button:active {
+  transform: translateY(0);
+}
+
+/* ============== Main ============== */
+
+main {
+  min-height: 80vh;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  background-image: linear-gradient(135deg, #fdfbf7 0%, #f3ede2 100%);
+}
+
+/* Greeting + watch + department row */
+
+.greeting {
+  width: min(900px, 96vw);
+  animation: fadeInDown 0.6s ease both;
+}
+
+.greeting h1 {
+  color: #1d3557;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+}
+
+.watch {
+  width: min(900px, 96vw);
+  display: flex;
+  gap: 1rem;
+  margin-top: -0.5rem;
+  animation: fadeInDown 0.7s ease both;
+}
+
+.watch p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a5a78;
+  font-variant-numeric: tabular-nums;
+}
+
+.department {
+  width: min(900px, 96vw);
+  margin-top: -0.5rem;
+  animation: fadeInDown 0.75s ease both;
+}
+
+.department p {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ============== Card sections ============== */
+
+.classes,
+.announcements,
+.access,
+.activity {
+  width: min(900px, 96vw);
+  background-image: linear-gradient(160deg, #ffffff 0%, #f5f9f8 100%);
+  border: 1px solid #e4dccc;
+  border-radius: 14px;
+  padding: 1.5rem 1.7rem;
+  box-shadow:
+    0 1px 2px rgba(29, 53, 87, 0.05),
+    0 14px 28px -16px rgba(29, 53, 87, 0.16);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  animation: fadeInUp 0.7s ease both;
+}
+
+.classes:hover,
+.announcements:hover,
+.access:hover,
+.activity:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 2px rgba(29, 53, 87, 0.06),
+    0 20px 36px -16px rgba(29, 53, 87, 0.22);
+}
+
+.classes h1,
+.announcements h1,
+.access h1,
+.activity h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 1rem;
+}
+
+/* My Classes list */
+
+.classes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.classes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e4dccc;
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+  font-size: 0.9rem;
+  color: #4a5a78;
+  transition:
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.classes li:hover {
+  border-color: #2a9d8f;
+  transform: translateX(4px);
+  box-shadow: 0 4px 10px -4px rgba(29, 53, 87, 0.2);
+}
+
+/* ============== Open Class Button ============== */
+
+.classes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.classes li div h3 {
+  color: #1d3557;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.classes li div p {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+/* Button */
+
+.open-class {
+  padding: 0.55rem 1.2rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background-image: linear-gradient(120deg, #2a9d8f 0%, #1d3557 100%);
+
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 14px -6px rgba(29, 53, 87, 0.5);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.open-class:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 20px -8px rgba(29, 53, 87, 0.5);
+}
+
+.open-class:active {
+  transform: translateY(0);
+}
+
+/* Announcements list */
+
+.announcements ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.announcements li {
+  position: relative;
+  padding: 0.6rem 0.6rem 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  color: #4a5a78;
+  border-left: 3px solid #e8927c;
+  background-image: linear-gradient(90deg, #fff3f0 0%, #ffffff 100%);
+  border-radius: 0 8px 8px 0;
+  transition:
+    border-left-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.announcements li:hover {
+  border-left-color: #d9714f;
+  transform: translateX(3px);
+}
+
+/* Quick Access links */
+
+.access ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+}
+
+.access li a {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #e4dccc;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f5f9f8 100%);
+  color: #1d3557;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition:
+    background-image 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.access li a:hover {
+  background-image: linear-gradient(120deg, #2a9d8f 0%, #1d3557 100%);
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px -8px rgba(29, 53, 87, 0.35);
+}
+
+/* Recent Activity list */
+
+.activity ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.activity li {
+  font-size: 0.9rem;
+  color: #6b7280;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.activity li:hover {
+  background-color: #f3ede2;
+  color: #1d3557;
+  transform: translateX(3px);
+}
+
+/* ============== Footer ============== */
+
+footer {
+  width: 100%;
+  padding: 2.5rem 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  background-image: linear-gradient(90deg, #1dbbdab5 0%, #1d3557 100%);
+  text-align: left;
+}
+
+.footer-about,
+.footer-support,
+.footer-security,
+.footer-copy {
+  max-width: 280px;
+}
+
+.footer-about h3,
+.footer-links h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+/* Footer Support and Security */
+
+.footer-support,
+.footer-security {
+  max-width: 280px;
+}
+
+.footer-support h3,
+.footer-security h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.footer-support p,
+.footer-security p {
+  color: #f0f4f8cc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+/* Hover effect for footer information */
+
+.footer-support p:hover,
+.footer-security p:hover {
+  color: #ffffff;
+}
+
+.footer-about p {
+  color: #f0f4f8cc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.footer-copy p {
+  color: #d6d6d6;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* ============== Animations ============== */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Dashboard</title>
+    <link rel="stylesheet" href="Class-Attendance.css" />
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>🏫 College Management System</h1>
+        </div>
+        <div class="clock">
+            <p id="time">Time: 00:00:00 | Date: 12/12/2005</p>
+        </div>
+        <div class="logout">
+            <button id="logout">Logout 👤</button>
+        </div>
+    </header>
+    <main>
+        <div class="heading">
+            <h2>👨‍🏫 Current Class</h2>
+        </div>
+        <div class="class-info">
+            <h2>📚 Class Information</h2>
+            <ul>
+                <li><strong>Subject:</strong> Mathematics</li>
+                <li><strong>Section:</strong> CSE-A</li>
+                <li><strong>Teacher:</strong> Dr. Sharma</li>
+                <li><strong>Date:</strong> 30 June 2026</li>
+                <li><strong>Time:</strong> 9:00 AM</li>
+            </ul>
+        </div>
+        <div class="summary">
+            <h2>📊 Today's Attendance Summary</h2>
+            <ul>
+                <li><strong>Total Students:</strong> 60</li>
+                <li><strong>Present:</strong> 0</li>
+                <li><strong>Absent:</strong> 60</li>
+            </ul>
+        </div>
+
+        <div class="qr">
+            <h2>📱 QR Attendance</h2>
+            <p><strong>QR Status:</strong> Not Generated</p>
+            <button id="generate-qr">Generate QR</button>
+            <p><strong>QR Validity:</strong> 5 Minutes</p>
+        </div>
+
+        <div class="attendance">
+            <h2>👨‍🎓 Student Attendance</h2>
+
+            <div class="attendance-list">
+                <!-- <div class="data">
+                    
+                </div> -->
+            </div>
+        </div>
+
+        <div class="actions">
+            <h2>⚡ Actions</h2>
+            <div class="actions-row">
+                <button id="refresh">Refresh Attendance</button>
+                <button id="submit">Submit Attendance</button>
+                <button id="download">Download Report</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-about">
+            <h3>🏫 College Management System</h3>
+            <p>
+                A digital platform for managing classes, attendance,
+                student records, and faculty activities.
+            </p>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 College Management System. All Rights Reserved.</p>
+            <p>Version 1.0 | Prototype</p>
+        </div>
+    </footer>
+    <script src="Class-Attendance.js"></script>
+</body>
+
+</html>
